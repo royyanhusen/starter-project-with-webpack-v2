@@ -1,0 +1,1550 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Arial", "Inter", sans-serif;
+  line-height: 1.6;
+  color: #343a40;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ======*/
+/*  Header Utama */
+main {
+  flex: 1;
+}
+
+header.main-header {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #ddd;
+
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+
+  min-height: 90px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+}
+/*  End Header Utama */
+
+/* header guest story */
+
+.new-story {
+  margin-top: 3.5rem;
+}
+.new-story-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  background-color: #f9f9f9;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.5rem;
+  z-index: 1000;
+  width: 100%;
+  min-height: 90px;
+}
+
+.new-story-header-container {
+  max-width: 1200px; /* batasi lebar isi */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-story-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.new-story-header-left .app-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.new-story-header-right a.btn-link {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.new-story-header-right a.btn-link:hover {
+  text-decoration: underline;
+}
+/* end header */
+
+/* notif button tutup */
+#notif-icon {
+  color: black; /* default */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#notif-icon.active {
+  color: red; /* saat diklik */
+}
+/* end notif button tutup */
+
+/* logout */
+.logout-link {
+  color: #dc3545 !important; /* Merah Bootstrap-style */
+  font-weight: 600;
+}
+
+.logout-link:hover {
+  color: #c82333; /* Warna merah lebih gelap saat hover */
+}
+/* end logout */
+
+/* Subscribe dan Unsubscribe */
+/* Warna biru untuk aktif (Subscribe) */
+.subscribe-active {
+  color: #2563eb;
+}
+
+/* Warna merah untuk non-aktif (Unsubscribe) */
+.unsubscribe-active {
+  color: #dc3545;
+}
+
+#subscribe_button {
+  position: relative;
+  z-index: 101; /* Ganti jadi lebih tinggi jika perlu */
+}
+
+.notif-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.notif-icon {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.notif-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.hidden {
+  display: none;
+}
+/* end Subscribe dan Unsubscribe */
+
+/* ===== End Header ======*/
+
+/* ===== container utama ======*/
+
+/* Tombol "Cerita Baru" */
+.new-story-location {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+.new-story-location input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.new-story-location input:focus {
+  border-color: #007bff; /* Ganti warna border saat fokus */
+  outline: none; /* Hilangkan outline default */
+}
+
+.new-story-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* Mencegah teks terpotong menjadi dua baris */
+}
+
+.new-story-button:hover {
+  background-color: #0056b3;
+}
+
+.new-story-button {
+  margin-left: auto; /* Memastikan tombol berada di sebelah kanan */
+}
+/* End Tombol "Cerita Baru" */
+
+/* camera */
+.new-story-camera-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  background: #000;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.new-story-camera-container.open {
+  display: block;
+}
+
+.new-story-camera-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.new-story-camera-canvas {
+  display: none;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.new-story-camera-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.new-story-camera-tools select {
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+}
+
+.new-story-camera-tools select:focus {
+  border-color: #007bff; /* Fix red border on focus */
+}
+
+.new-story-camera-tools_buttons button {
+  background-color: #007bff; /* Default color for the button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.new-story-camera-tools_buttons button.open-camera {
+  background-color: #28a745; /* Green color when opening camera */
+}
+
+.new-story-camera-tools_buttons button.close-camera {
+  background-color: #dc3545; /* Red color when camera is closed */
+}
+
+.new-story-camera-tools_buttons button:hover {
+  background-color: #0056b3;
+}
+
+.new-story-camera-tools_buttons button.open-camera:hover {
+  background-color: #218838; /* Darker green when hovering open camera button */
+}
+
+.new-story-camera-tools_buttons button.close-camera:hover {
+  background-color: #c82333; /* Darker red when hovering close camera button */
+}
+
+.new-story-camera-tools_buttons button i {
+  margin-right: 8px;
+}
+
+.new-story-documentations-outputs {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-story-documentations-outputs-item {
+  margin: 5px;
+  position: relative;
+}
+
+.new-story-documentations-outputs-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-story-documentations-outputs-item img:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.new-story-documentations-outputs-item__delete-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.new-story-documentations-outputs-item__delete-btn:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+/* end camera */
+
+/* map */
+.map-container {
+  width: 100%;
+  height: 400px; /* Tentukan tinggi yang sesuai untuk peta */
+  background-color: #e0e0e0; /* Warna latar belakang sementara untuk memverifikasi */
+}
+
+/* ===== End container utama ======*/
+
+/* ===== Login ======*/
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  padding: 2rem;
+}
+
+/* Login form card */
+.login-form-container {
+  background-color: white;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Title */
+.login__title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2a2a2a;
+  text-align: center;
+}
+
+/* Form styling */
+.login-form .form-control {
+  margin-bottom: 1.2rem;
+}
+
+.login-form label {
+  display: block;
+  /* margin-bottom: 0.5rem; */
+  color: #333;
+  font-weight: 500;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.login-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 2rem;
+
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Link to register */
+.login-form__do-not-have-account {
+  /* margin-top: 1rem; */
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.login-form__do-not-have-account a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-form__do-not-have-account a:hover {
+  text-decoration: underline;
+}
+/* ===== End Login ======*/
+
+/* ===== Register ======*/
+
+/* register */
+/* Container utama */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 2rem;
+}
+
+/* Box form */
+.register-form-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul form */
+.register__title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Label dan input wrapper */
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.register-form__title-container input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.register-form__title-container input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Ikon loading */
+.loader-button {
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+/* Link ke login */
+.register-form__already-have-account {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.register-form__already-have-account a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-form__already-have-account a:hover {
+  text-decoration: underline;
+}
+
+/* Spin animasi untuk ikon */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ===== End register ======*/
+
+/* Container for the entire form control */
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px; /* Menambahkan jarak bawah */
+}
+
+/* Tombol outline */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+/* Efek saat tombol di-hover */
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Efek saat tombol di-klik (aktif) */
+.btn:active {
+  background-color: rgba(0, 123, 255, 0.7);
+  color: white;
+  transform: scale(0.98);
+}
+
+/* Untuk tombol outline, beri efek saat tombol di-klik */
+.btn-outline:active {
+  background-color: rgba(
+    0,
+    123,
+    255,
+    0.1
+  ); /* Latar belakang sedikit transparan */
+  color: white; /* Ubah warna teks menjadi putih saat tombol outline ditekan */
+  border-color: #007bff;
+}
+
+/* Membuat ikon di dalam tombol tetap terlihat */
+.btn i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* end Container for the entire form control */
+
+/* Menyembunyikan input file */
+#documentations-input {
+  display: none;
+}
+
+.new-story-camera-container {
+  display: none;
+  position: relative;
+  text-align: center;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.new-story-camera-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.new-story-camera-canvas {
+  display: none;
+}
+
+.new-story-camera-tools {
+  margin-top: 15px;
+}
+
+.new-story-camera-tools select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.new-story-camera-tools_buttons {
+  margin-top: 10px;
+}
+
+.new-story-camera-tools_buttons .btn {
+  width: 100%;
+}
+
+#documentations-taken-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.new-story-documentations-outputs li {
+  width: 120px;
+  height: 120px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.new-story-documentations-outputs li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Pastikan container memiliki lebar penuh dan fleksibel */
+.container {
+  width: 100%;
+  max-width: 1200px; /* Menyesuaikan lebar agar tidak terlalu lebar */
+  margin: 0 auto; /* Memastikan berada di tengah */
+}
+
+/* Header Center untuk Beranda */
+.header-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Ikon Lonceng */
+.notif-icon {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 5px; /* Jarak lebih kecil antara ikon lonceng dan subscribe */
+}
+
+.notif-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+/* Notifikasi List */
+.notif-list {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 250px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =================== Home Page ==================== */
+
+/* New Story */
+.new-story .form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 50px;
+}
+
+.new-story .form-group {
+  margin-bottom: 20px;
+}
+
+.new-story .form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.new-story .form-group input,
+.new-story .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.new-story .form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.new-story .form-group button:hover {
+  background-color: #45a049;
+}
+
+.new-story .map-container {
+  width: 100%;
+  height: 500px;
+  background-color: #e0e0e0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style untuk tombol Kirim Cerita */
+.new-story .submit-button {
+  background-color: #4caf50; /* Hijau, sesuaikan dengan tema Anda */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  width: auto;
+}
+
+.new-story .submit-button i {
+  font-size: 18px; /* Ukuran ikon */
+}
+/* Menata container untuk tombol */
+.new-story .btn-new-story {
+  display: flex;
+  justify-content: flex-end; /* Menempatkan tombol di kanan */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/* Tombol Kirim Cerita */
+.submit-button {
+  background-color: #28a745; /* Warna latar belakang hijau (warna tombol normal) */
+  color: white; /* Warna teks putih */
+  padding: 12px 25px; /* Padding agar tombol lebih besar */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Memberikan jarak antara ikon dan teks */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi halus */
+}
+
+/* Efek hover pada tombol submit */
+.submit-button:hover {
+  background-color: #006400; /* Latar belakang lebih gelap dengan hijau tua saat di-hover */
+  transform: scale(1.05); /* Efek sedikit memperbesar tombol */
+}
+
+/* Efek hover pada ikon */
+.submit-button i {
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover i {
+  transform: translateX(5px); /* Ikon bergerak sedikit ke kanan saat hover */
+}
+
+/* =================== END Home Page ==================== */
+
+/* =================== stories Page ==================== */
+
+/* Grid untuk menampilkan cerita dalam 4 kolom */
+#home {
+  padding-top: 6rem; /* Sesuaikan dengan tinggi header */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Menjaga agar semua konten sejajar di kiri */
+  background-color: #f9f9f9;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Judul pada Section */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+/* Grid untuk menampilkan cerita dalam 4 kolom */
+.story-list__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.story-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.story-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Mengatur tinggi gambar dengan benar */
+.story-image {
+  width: 100%;
+  height: 250px; /* Set height gambar lebih tinggi */
+  object-fit: cover; /* Pastikan gambar mengisi area tanpa merusak rasio */
+  border-bottom: 3px solid #f0f0f0;
+}
+
+.story-content {
+  padding: 16px;
+}
+
+.story-title {
+  font-size: 1.5rem; /* Ukuran font lebih besar */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.story-date {
+  font-size: 1rem; /* Peningkatan ukuran font */
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.story-location {
+  font-size: 1rem; /* Peningkatan ukuran font */
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* Gaya untuk tombol pada kartu cerita di Home Page */
+.btn-detail {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  margin-left: auto;
+  text-align: center;
+  display: block;
+}
+
+.btn-detail:hover {
+  background-color: #1e40af;
+}
+
+.form-group textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Optional: menambahkan efek focus pada textarea */
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+/* =================== end stories Page ==================== */
+
+/*  buttons new story */
+.new-story-documentations-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.new-story-documentations-buttons .btn {
+  flex: 1; /* tombol berbagi ruang sama rata */
+  padding: 10px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 120px; /* supaya gak terlalu kecil */
+}
+
+.new-story-documentations-buttons .btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-close-camera {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-close-camera:hover {
+  background-color: #c62828;
+}
+/* end */
+
+/* detail story */
+.detail-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.story-detail-card {
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-top: 4rem;
+}
+
+.story-detail-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.story-photo {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 1rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story-detail-title-dua {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  border-bottom: 2px solid #004d40;
+  padding-bottom: 0.3rem;
+}
+
+.story-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.story-detail-item {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.story-detail-item label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.story-detail-item p,
+.story-detail-item span {
+  color: #333;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.story-map {
+  /* border: 2px solid #004d40; */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: red;
+  background-color: #ffe6e6;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.btn-back {
+  background-color: #007bff;
+  color: #fff;
+  text-align: right;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: none !important; /* pastikan tidak ada garis bawah */
+}
+
+.btn-back i {
+  margin-right: 8px;
+}
+
+.btn-back:hover {
+  background-color: #0056b3;
+}
+
+/* skip content */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  background: #000;
+  color: #fff;
+  z-index: 1000;
+}
+/* end skip content */
+/* Responsive grid layout */
+
+/* ==== RESPONSIVE STORY GRID ==== */
+@media (max-width: 1200px) {
+  .story-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Style drawer button */
+
+header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* jarak antara kiri dan kanan */
+  padding: 10px 20px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Brand / Logo */
+header .brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.navigation-drawer {
+  min-height: 100vh;
+  width: 200px;
+  padding: 20px 10px;
+  background-color: #fff;
+
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+
+  box-shadow: 0 0 4px 2px #00000033;
+  transform: translateX(-100%);
+  transition: transform 350ms;
+
+  z-index: 9999;
+}
+
+.navigation-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-button {
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+
+  display: inline-block;
+  background-color: transparent;
+
+  font-weight: bold;
+  font-size: 28px;
+  color: #141e16;
+
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  padding: 6px 10px;
+
+  display: block;
+
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Write your styles more here */
+@media screen and (width > 1000px) {
+  .navigation-drawer {
+    min-height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: static;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-list li a {
+    display: inline-block;
+  }
+
+  .drawer-button {
+    display: none;
+  }
+}
+
+/* ==== TRANSISI HALAMAN DENGAN VIEW TRANSITION API ==== */
+
+/* Halaman lama keluar */
+::view-transition-old(root) {
+  animation: fade-out 200ms ease-out forwards,
+    slide-to-left 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Halaman baru masuk */
+::view-transition-new(root) {
+  animation: fade-in 300ms ease-in forwards,
+    slide-from-right 300ms cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    scale-up 250ms ease-in-out forwards;
+}
+
+/* ==== KEYFRAMES ==== */
+/* Fade In */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade Out */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Slide From Right */
+@keyframes slide-from-right {
+  from {
+    transform: translateX(40px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide To Left */
+@keyframes slide-to-left {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-40px) scale(0.98);
+    opacity: 0;
+  }
+}
+
+/* ==== OPTIONAL: SMOOTH ELEMENTS ON HOVER ==== */
+.card,
+.story-item {
+  transition: box-shadow 0.3s ease, background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.card:hover,
+.story-item:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transform: translateY(-4px);
+}
+
+/* ==== OPTIONAL: MENCEGAH SCROLL MENGGANGGU SAAT TRANSISI ==== */
+html.view-transition {
+  scroll-behavior: auto;
+}
+
+/* skip content */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Gaya untuk footer */
+/* Bungkus luar, lebarnya full dan punya background + shadow */
+.footer-wrapper {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-top: 1px solid #ddd;
+  width: 100%;
+}
+
+/* Container isi yang dibatasi lebar maksimal */
+#footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  min-height: 90px;
+}
+
+.footer-content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.brand-name__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.brand-name__link__image {
+  height: 30px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.brand-name__link__text {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+.report-detail__body__actions__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.report-detail__actions__buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* bookmart */
+#bookmarks {
+  padding-top: 6rem; /* Sesuaikan dengan tinggi header */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f9f9f9;
+  padding-left: 20px;
+  padding-right: 20px;
+  min-height: calc(100vh - 6rem);
+  box-sizing: border-box;
+}
+
+.actions-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Tombol kembali */
+.btn-back {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  /* padding: 0.5rem 1rem; */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  /* display: flex; */
+  align-items: center;
+  /* gap: 0.5rem; */
+}
+
+.btn-back:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Kontainer untuk aksi simpan */
+#save-actions-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* not found */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  height: 100vh; /* tinggi penuh viewport */
+  margin: 0 auto; /* center secara horizontal */
+  text-align: center;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #d9534f;
+}
+
+.not-found p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.not-found a {
+  text-decoration: none;
+  background-color: #0275d8;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.not-found a:hover,
+.not-found a:focus {
+  background-color: #025aa5;
+  outline: none;
+}
