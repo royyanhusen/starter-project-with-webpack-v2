@@ -10,6 +10,15 @@ export default class Map {
   #activeMarker = null;
 
   static async getPlaceNameByCoordinate(latitude, longitude) {
+    const key = `${latitude.toFixed(5)},${longitude.toFixed(5)}`;
+    const cacheKey = `place-name-${key}`;
+
+    // 1. Coba ambil dari cache lokal
+    const cachedPlaceName = localStorage.getItem(cacheKey);
+    if (!navigator.onLine && cachedPlaceName) {
+      return cachedPlaceName;
+    }
+
     try {
       const url = new URL(
         `https://api.maptiler.com/geocoding/${longitude},${latitude}.json`
@@ -31,10 +40,21 @@ export default class Map {
         c.id.includes("country")
       )?.text;
 
-      if (region && country) return `${region}, ${country}`;
-      return feature.place_name || `${latitude}, ${longitude}`;
+      const placeName =
+        region && country
+          ? `${region}, ${country}`
+          : feature.place_name || `${latitude}, ${longitude}`;
+
+      // 2. Simpan hasilnya ke cache lokal
+      localStorage.setItem(cacheKey, placeName);
+
+      return placeName;
     } catch (error) {
       console.error("getPlaceNameByCoordinate error:", error);
+
+      // 3. Kalau fetch gagal tapi ada cache, pakai cache
+      if (cachedPlaceName) return cachedPlaceName;
+
       return `${latitude}, ${longitude}`;
     }
   }

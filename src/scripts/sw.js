@@ -2,6 +2,8 @@ import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute, NavigationRoute } from "workbox-routing";
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { clientsClaim } from "workbox-core";
+import { ExpirationPlugin } from "workbox-expiration";
+
 import {
   NetworkFirst,
   CacheFirst,
@@ -109,9 +111,18 @@ registerRoute(
 
 // Runtime caching: MapTiler tile
 registerRoute(
-  ({ url }) => url.origin.includes("maptiler"),
+  ({ url }) => url.origin === "https://api.maptiler.com",
   new CacheFirst({
     cacheName: "maptiler-api",
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxEntries: 200,
+        maxAgeSeconds: 7 * 24 * 60 * 60, // 1 minggu
+      }),
+    ],
   })
 );
 
