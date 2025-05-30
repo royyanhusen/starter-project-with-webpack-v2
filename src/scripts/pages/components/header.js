@@ -346,38 +346,6 @@ export default class Header {
     });
   }
 
-  // addNotification(notification) {
-  //   let notifications = [];
-  //   try {
-  //     notifications = JSON.parse(localStorage.getItem("notifications") || "[]");
-  //     if (!Array.isArray(notifications)) notifications = [];
-  //   } catch {
-  //     notifications = [];
-  //   }
-
-  //   notifications.push(notification);
-  //   localStorage.setItem("notifications", JSON.stringify(notifications));
-
-  //   let viewedIds = [];
-  //   try {
-  //     viewedIds = JSON.parse(localStorage.getItem("viewedStoryIds") || "[]");
-  //     if (!Array.isArray(viewedIds)) viewedIds = [];
-  //   } catch {
-  //     viewedIds = [];
-  //   }
-
-  //   const unread = notifications.filter((n) => !viewedIds.includes(n.storyId));
-  //   localStorage.setItem("unreadCount", unread.length.toString());
-
-  //   const notifCount = this.headerElement.querySelector("#notif-count");
-  //   notifCount.textContent = unread.length;
-  //   notifCount.style.visibility = unread.length === 0 ? "hidden" : "visible";
-
-  //   this.headerElement.querySelector("#notif-icon").classList.remove("hidden");
-
-  //   console.log("[addNotification] Updated unread count:", unread.length);
-  // }
-
   addNotification(notification) {
     let notifications = [];
     try {
