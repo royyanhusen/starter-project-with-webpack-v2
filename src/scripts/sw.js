@@ -48,26 +48,25 @@ registerRoute(
   })
 );
 
-// Runtime caching: CDN fontawesome atau cdnjs
+// Runtime caching: CSS dan font dari CDN FontAwesome (via cdnjs)
 registerRoute(
-  ({ request, url }) =>
-    url.origin.includes("fontawesome") ||
-    url.href.includes("cdnjs.cloudflare.com/ajax/libs/font-awesome") ||
-    url.pathname.endsWith(".css") ||
-    url.pathname.endsWith(".woff2") ||
-    url.pathname.endsWith(".woff") ||
-    url.pathname.endsWith(".ttf") ||
-    url.pathname.endsWith(".eot") ||
-    url.pathname.endsWith(".svg"),
+  ({ url }) =>
+    url.origin === "https://cdnjs.cloudflare.com" &&
+    url.pathname.startsWith("/ajax/libs/font-awesome/"),
   new CacheFirst({
-    cacheName: "fontawesome-cache",
+    cacheName: "fontawesome-cache-v2",
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
+      new ExpirationPlugin({
+        maxEntries: 20,
+        maxAgeSeconds: 60 * 60 * 24 * 30, // 30 hari
+      }),
     ],
   })
 );
+
 
 // Runtime caching: avatar dari ui-avatars
 registerRoute(
